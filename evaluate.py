@@ -189,16 +189,7 @@ def make_rfe_ranking(X_train, y_train, n=3):
     model = LinearRegression()
     # use recursive feature elimination to select features
     rfe = RFE(model, n_features_to_select=n)
-    scaled_columns = [
-        "scaled_bedroomcnt",
-        "scaled_bathroomcnt",
-        "scaled_calculatedfinishedsquarefeet",
-        "scaled_age",
-    ]
     # fit the RFE to the training with only the original and not the scaled features
-    rfe.fit(X_train.drop(scaled_columns, axis=1), y_train)
-    return pd.DataFrame(
-        {"rfe_ranking": rfe.ranking_},
-        index=X_train.drop(scaled_columns, axis=1).columns,
-    )
+    rfe.fit(X_train, y_train)
+    return pd.DataFrame({"rfe_ranking": rfe.ranking_}, index=X_train.columns,)
 
