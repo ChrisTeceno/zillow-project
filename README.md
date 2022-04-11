@@ -61,7 +61,7 @@ Zillow attempted with varying degrees of success to predict housing values based
 8. give recomedations to move forward
 
 ## CONCLUSION
-### Drivers of churn
+### Drivers of property value
 All the features seem important in predicting the value of the property but the number of bathrooms appears the most important.
 Sqft was not as important as expected and I would like to delve into that more given more time.
 
